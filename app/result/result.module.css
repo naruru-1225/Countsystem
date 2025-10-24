@@ -6,6 +6,16 @@
   min-height: 100vh;
 }
 
+.container *::selection {
+  background: transparent;
+  color: inherit;
+}
+
+.container *::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 15px;

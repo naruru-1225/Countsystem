@@ -8,6 +8,16 @@
   flex-direction: column;
 }
 
+.container *::selection {
+  background: transparent;
+  color: inherit;
+}
+
+.container *::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
 .title {
   font-size: 2rem;
   color: #333;
