@@ -1,0 +1,275 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.stats {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.totalVotes {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0070f3;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.boxWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #fff;
+  border: 3px solid #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.box:hover {
+  background-color: #f0f0f0;
+  border-color: #10b981;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.box.selected {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+  transform: scale(1.05);
+}
+
+.box.mostVoted {
+  border-color: #f59e0b;
+  border-width: 4px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.box.mostVoted.selected {
+  background: #10b981;
+  color: white;
+  border-color: #f59e0b;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+}
+
+/* 投票割合によるグラデーション (10%刻み) */
+.gradient10 {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%) !important;
+  color: #0369a1 !important;
+  border-color: #7dd3fc !important;
+}
+
+.gradient20 {
+  background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%) !important;
+  color: #075985 !important;
+  border-color: #38bdf8 !important;
+}
+
+.gradient30 {
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%) !important;
+  color: #0c4a6e !important;
+  border-color: #0ea5e9 !important;
+}
+
+.gradient40 {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%) !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+}
+
+.gradient50 {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  border-color: #0369a1 !important;
+}
+
+.gradient60 {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border-color: #075985 !important;
+}
+
+.gradient70 {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+  color: #ffffff !important;
+  border-color: #0c4a6e !important;
+}
+
+.gradient80 {
+  background: linear-gradient(135deg, #075985 0%, #0c4a6e 100%) !important;
+  color: #ffffff !important;
+  border-color: #0c4a6e !important;
+}
+
+.gradient90 {
+  background: linear-gradient(135deg, #0c4a6e 0%, #7c2d12 100%) !important;
+  color: #ffffff !important;
+  border-color: #7c2d12 !important;
+}
+
+.gradient100 {
+  background: linear-gradient(135deg, #7c2d12 0%, #991b1b 100%) !important;
+  color: #ffffff !important;
+  border-color: #991b1b !important;
+  box-shadow: 0 0 20px rgba(153, 27, 27, 0.5) !important;
+}
+
+/* グラデーションが適用されている場合はmostVotedのスタイルを上書き */
+.box.gradient10,
+.box.gradient20,
+.box.gradient30,
+.box.gradient40,
+.box.gradient50,
+.box.gradient60,
+.box.gradient70,
+.box.gradient80,
+.box.gradient90,
+.box.gradient100 {
+  animation: none;
+}
+
+/* 最多投票の選択肢を特別に強調（グラデーションと組み合わせ） */
+.box.mostVoted.gradient10,
+.box.mostVoted.gradient20,
+.box.mostVoted.gradient30,
+.box.mostVoted.gradient40,
+.box.mostVoted.gradient50,
+.box.mostVoted.gradient60,
+.box.mostVoted.gradient70,
+.box.mostVoted.gradient80,
+.box.mostVoted.gradient90,
+.box.mostVoted.gradient100 {
+  border-width: 5px !important;
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.8), 
+              0 0 50px rgba(251, 191, 36, 0.4) !important;
+  animation: mostVotedPulse 2s ease-in-out infinite !important;
+  transform: scale(1.08) !important;
+}
+
+@keyframes mostVotedPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.8), 
+                0 0 50px rgba(251, 191, 36, 0.4);
+    transform: scale(1.08);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(251, 191, 36, 1), 
+                0 0 70px rgba(251, 191, 36, 0.6);
+    transform: scale(1.1);
+  }
+}
+
+/* 選択時のスタイルを維持 */
+.box.selected.gradient10,
+.box.selected.gradient20,
+.box.selected.gradient30,
+.box.selected.gradient40,
+.box.selected.gradient50,
+.box.selected.gradient60,
+.box.selected.gradient70,
+.box.selected.gradient80,
+.box.selected.gradient90,
+.box.selected.gradient100 {
+  background: #10b981 !important;
+  color: white !important;
+  border-color: #10b981 !important;
+}
+
+.voteInfo {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.voteCount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.percentage {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #f59e0b;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.resetButton {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resetButton:hover {
+  background-color: #dc2626;
+}
