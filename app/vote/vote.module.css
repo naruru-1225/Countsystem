@@ -119,18 +119,17 @@
   }
 }
 
-.box:hover:not(:disabled) {
-  background-color: #f0f0f0;
-  border-color: #0070f3;
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+@media (hover: hover) and (pointer: fine) {
+  .box:hover:not(:disabled) {
+    background-color: #f0f0f0;
+    border-color: #0070f3;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
 }
 
-@media (max-width: 768px) {
-  .box:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  }
+.box:active:not(:disabled) {
+  transform: scale(0.95);
 }
 
 .box.selected {

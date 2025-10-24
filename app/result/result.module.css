@@ -111,13 +111,15 @@
   touch-action: manipulation;
 }
 
-.box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+@media (hover: hover) and (pointer: fine) {
+  .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .box:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
