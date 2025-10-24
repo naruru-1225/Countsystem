@@ -1,7 +1,9 @@
 import Redis from 'ioredis'
 
 // Redisクライアントの初期化
-const redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379')
+// Upstash Redis (KV_URL) または 一般的なRedis (REDIS_URL) に対応
+const redisUrl = process.env.KV_URL || process.env.REDIS_URL || 'redis://localhost:6379'
+const redis = new Redis(redisUrl)
 
 // KVストアのキー名
 const VOTES_KEY = 'votes'
