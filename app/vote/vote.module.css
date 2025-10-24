@@ -86,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: bold;
   background-color: #fff;
   border: 3px solid #ddd;
@@ -106,7 +106,7 @@
 
 @media (max-width: 768px) {
   .box {
-    font-size: 2rem;
+    font-size: 2.5rem;
     border-width: 2px;
     min-height: 70px;
   }
